@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Una nueva perspectiva del viaje. Prototipo universitario de una experiencia de vuelos ejecutivos y primera clase inspirado en Avianca.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>avianca — Una nueva perspectiva del viaje</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23da291c'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-family='Arial' font-size='28' font-weight='700' fill='white'%3Ea%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Encabezado: los enlaces recorren este mismo index. -->
+  <header class="encabezado" id="inicio">
+    <div class="contenedor navegacion">
+      <a class="marca" href="#inicio" aria-label="Avianca, inicio">avianca<span class="marca-detalle">PREMIUM CONCEPT</span></a>
+      <nav aria-label="Navegación principal">
+        <a class="activo" href="#inicio" aria-current="page">Inicio</a>
+        <a href="#experiencia">La experiencia</a>
+        <a href="#cabinas">Nuestras cabinas</a>
+        <a href="#viaje">Tu viaje</a>
+      </nav>
+      <a class="boton boton-oscuro" href="#cabinas">Descubre tu espacio</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Portada editorial: imagen conceptual, no fotografía de una flota real. -->
+    <section class="portada" aria-labelledby="titulo-portada">
+      <img class="avion" src="assets/avion.webp" alt="Visual conceptual de un avión comercial blanco y rojo volando sobre las nubes" width="1536" height="1024" fetchpriority="high">
+      <div class="contenedor portada-contenido">
+        <p class="etiqueta">UNA NUEVA PERSPECTIVA DEL VIAJE</p>
+        <h1 id="titulo-portada">El placer<br>de <span>volar.</span></h1>
+        <div class="portada-nota">
+          <span class="linea-roja" aria-hidden="true"></span>
+          <p>Más espacio para ti.<br>Más tiempo para disfrutar.</p>
+        </div>
+        <div class="portada-pie">
+          <span>EJECUTIVA & PRIMERA CLASE</span>
+          <span>El viaje empieza mucho antes de llegar.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maqueta del buscador: controles deshabilitados, sin JavaScript ni envíos. -->
+    <section class="buscador contenedor" aria-labelledby="titulo-buscador" aria-describedby="nota-buscador">
+      <div class="buscador-superior">
+        <h2 id="titulo-buscador">Tu próximo viaje</h2>
+        <div class="opciones-viaje" aria-label="Configuración de ejemplo"><span>Ida y vuelta</span><span>1 adulto</span><span>Clase ejecutiva</span></div>
+        <span class="nota-prototipo" id="nota-buscador">Vista de diseño · sin reservas</span>
+      </div>
+      <div class="buscador-campos">
+        <div class="campo"><span class="campo-etiqueta">Origen</span><span class="campo-valor">¿Desde dónde vuelas?</span></div>
+        <span class="intercambio" aria-hidden="true">⇄</span>
+        <div class="campo"><span class="campo-etiqueta">Destino</span><span class="campo-valor">¿A dónde quieres ir?</span></div>
+        <div class="campo campo-fechas"><span class="campo-etiqueta">Salida / Regreso</span><span class="campo-valor">Elige tus fechas</span></div>
+        <button class="boton boton-rojo" type="button" disabled>Explorar vuelos</button>
+      </div>
+    </section>
+
+    <!-- Beneficios: composición asimétrica y divisores finos, inspirados en DESIGN.md. -->
+    <section class="experiencia contenedor seccion" id="experiencia" aria-labelledby="titulo-experiencia">
+      <div class="introduccion">
+        <p class="etiqueta"><span class="numero">01</span> LA EXPERIENCIA</p>
+        <h2 id="titulo-experiencia">El destino importa.<br><span class="texto-suave">Cómo llegas,<br>también.</span></h2>
+        <p>Hay viajes que empiezan con una pausa. Con espacio para estirarte, desconectarte y disfrutar de cada detalle a tu ritmo.</p>
+      </div>
+      <div class="beneficios">
+        <article><span class="indice">01 /</span><h3>Tu espacio, de verdad.</h3><p>Una propuesta de cabina pensada para descansar, trabajar o simplemente disfrutar del vuelo.</p></article>
+        <article><span class="indice">02 /</span><h3>Viaja sin prisa.</h3><p>Imaginamos una experiencia más tranquila, desde tu llegada al aeropuerto hasta el último tramo.</p></article>
+        <article><span class="indice">03 /</span><h3>El gusto de viajar.</h3><p>Sabores y momentos que convierten el tiempo a bordo en parte de lo que quieres recordar.</p></article>
+        <article><span class="indice">04 /</span><h3>A tu manera.</h3><p>Una atención que empieza por lo esencial: entender cómo te gusta viajar.</p></article>
+      </div>
+    </section>
+
+    <!-- Dos propuestas de cabina. Primera clase forma parte del concepto académico. -->
+    <section class="cabinas" id="cabinas" aria-labelledby="titulo-cabinas">
+      <div class="contenedor">
+        <div class="cabinas-encabezado"><div><p class="etiqueta"><span class="numero">02</span> NUESTRAS CABINAS</p><h2 id="titulo-cabinas">Encuentra tu<br>forma de volar.</h2></div><p>Dos maneras de imaginar<br>una experiencia extraordinaria.</p></div>
+        <div class="cabinas-grid">
+          <article class="cabina-ejecutiva">
+            <img src="assets/cabina.webp" width="1536" height="1024" loading="lazy" alt="Visual conceptual de un asiento de clase ejecutiva en una cabina iluminada por luz natural">
+            <div class="cabina-texto"><span class="etiqueta">BUSINESS</span><h3>Clase ejecutiva.</h3><p>El equilibrio entre comodidad,<br>privacidad y tiempo para ti.</p><span class="cabina-pie">UN ESPACIO PARA DESCONECTAR</span></div>
+          </article>
+          <article class="cabina-primera">
+            <div class="primera-superior"><span class="etiqueta">FIRST</span><span class="sello">CONCEPTO</span></div>
+            <h3>El lujo de<br>sentirte<br>en tu mundo.</h3>
+            <div class="primera-inferior"><h4>Primera clase.</h4><p>Una visión del viaje con más intimidad,<br>más calma y cada detalle a tu medida.</p><span class="cabina-pie">UNA PROPUESTA SIN LÍMITES</span></div>
+          </article>
+        </div>
+        <p class="nota-cabinas">Cabinas e imágenes conceptuales del proyecto universitario. No describen una oferta comercial real de Avianca.</p>
+      </div>
+    </section>
+
+    <section class="viaje contenedor seccion" id="viaje" aria-labelledby="titulo-viaje">
+      <div class="viaje-titulo"><p class="etiqueta"><span class="numero">03</span> CADA MOMENTO CUENTA</p><h2 id="titulo-viaje">De principio<br>a extraordinario.</h2></div>
+      <div class="momentos">
+        <article><span>01</span><div><h3>Antes de despegar</h3><p>Elige la experiencia que va contigo y empieza a imaginar tu próximo destino.</p></div></article>
+        <article><span>02</span><div><h3>Mientras vuelas</h3><p>Encuentra ese momento para leer, descansar o dejar que el paisaje haga el resto.</p></div></article>
+        <article><span>03</span><div><h3>Al llegar</h3><p>Lleva contigo la sensación de haber disfrutado tanto el camino como el destino.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-superior"><a class="marca marca-pie" href="#inicio">avianca<span class="marca-detalle">PREMIUM CONCEPT</span></a><p>Volar también puede ser<br>tu parte favorita del viaje.</p><a class="boton boton-contorno" href="#inicio">Volver al inicio</a></div>
+      <div class="pie-inferior"><span>Proyecto universitario · 2026</span><span>Prototipo independiente, no es el sitio oficial de Avianca.</span><span>Diseñado para imaginar.</span></div>
+    </div>
+  </footer>
+</body>
+</html>

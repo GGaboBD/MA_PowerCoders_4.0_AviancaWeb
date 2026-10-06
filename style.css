@@ -1,0 +1,135 @@
+/* AVIACIÓN PREMIUM — primera versión de escritorio.
+   Identidad de referencia: Avianca. Composición editorial: DESIGN.md / Hyer.
+   HTML y CSS propios. Sin librerías ni funcionalidades de compra. */
+
+/* 1. Variables compartidas: cambiar aquí la paleta y la escala general. */
+@font-face { font-family: "Red Hat Display"; src: url("assets/red-hat-400.ttf") format("truetype"); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: "Red Hat Display"; src: url("assets/red-hat-700.ttf") format("truetype"); font-style: normal; font-weight: 700; font-display: swap; }
+@font-face { font-family: "Red Hat Display"; src: url("assets/red-hat-900.ttf") format("truetype"); font-style: normal; font-weight: 900; font-display: swap; }
+:root {
+  --rojo: #da291c;
+  --rojo-profundo: #bd2117;
+  --negro: #131313;
+  --blanco: #fff;
+  --gris-texto: #62666b;
+  --gris-borde: #d9dcdf;
+  --cielo: #eef3f7;
+  --ancho: 1320px;
+  --fuente: "Red Hat Display", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 2. Base. La adaptación para teléfono se realizará en otra etapa. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 32px; }
+body { margin: 0; min-width: 1100px; background: var(--blanco); color: var(--negro); font-family: var(--fuente); font-size: 18px; line-height: 1.6; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4 { font-weight: 700; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+img { display: block; max-width: 100%; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--rojo); outline-offset: 6px; }
+.contenedor { width: calc(100% - 112px); max-width: var(--ancho); margin-inline: auto; }
+.seccion { padding-block: 112px; }
+.etiqueta { font-size: 12px; font-weight: 700; letter-spacing: .13em; line-height: 1.5; }
+.numero { display: inline-block; margin-right: 20px; color: var(--rojo); }
+.texto-suave { color: var(--gris-texto); }
+.boton { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 13px 26px; border: 1px solid transparent; border-radius: 1000px; font-size: 14px; font-weight: 700; white-space: nowrap; transition: background .2s, color .2s; }
+.boton-oscuro { background: var(--negro); color: var(--blanco); }
+.boton-oscuro:hover { background: var(--rojo); }
+.boton-rojo { background: var(--rojo); color: var(--blanco); }
+.boton:disabled { cursor: not-allowed; opacity: 1; }
+.boton-contorno { border-color: #646464; color: white; }
+.boton-contorno:hover { color: var(--negro); background: white; }
+.saltar { position: absolute; top: -100px; left: 20px; padding: 12px 20px; background: white; z-index: 10; }
+.saltar:focus { top: 12px; }
+
+/* 3. Navegación horizontal de escritorio. */
+.encabezado { background: var(--blanco); }
+.navegacion { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.marca { color: var(--rojo); font-size: 43px; font-weight: 900; line-height: .95; letter-spacing: -.065em; }
+.marca-detalle { display: block; margin-top: 9px; font-size: 12px; font-weight: 700; letter-spacing: .19em; color: var(--negro); }
+nav { display: flex; gap: 32px; align-items: center; }
+nav a { position: relative; font-size: 14px; font-weight: 500; padding-block: 10px; }
+nav a:hover { color: var(--rojo); }
+nav .activo::after { content: ""; position: absolute; width: 16px; height: 2px; left: 0; bottom: 2px; background: var(--rojo); }
+
+/* 4. Portada: capas para separar la imagen, la tipografía y el pie. */
+.portada { position: relative; overflow: hidden; height: 650px; isolation: isolate; background: var(--cielo); }
+.avion { position: absolute; z-index: -2; right: 0; bottom: 0; width: 79%; height: 100%; object-fit: cover; object-position: 50% 54%; }
+.portada::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, var(--cielo) 0%, rgba(238,243,247,.97) 19%, rgba(238,243,247,.1) 48%, transparent 64%); }
+.portada-contenido { position: relative; height: 100%; padding-top: 48px; }
+.portada .etiqueta { color: #434c55; }
+h1 { margin-top: 27px; font-size: clamp(96px, 8.2vw, 124px); line-height: .96; letter-spacing: -.065em; }
+h1 span { color: var(--rojo); }
+.portada-nota { display: flex; align-items: flex-start; gap: 16px; margin-top: 36px; }
+.portada-nota p { font-size: 18px; line-height: 1.55; color: #434c55; }
+.linea-roja { display: block; width: 25px; height: 2px; margin-top: 12px; background: var(--rojo); }
+.portada-pie { position: absolute; bottom: 36px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #a3adb5; padding-top: 20px; font-size: 13px; }
+.portada-pie span:first-child { letter-spacing: .13em; font-size: 12px; font-weight: 700; }
+
+/* 5. Buscador estático. Los datos son texto de ejemplo, no un formulario real. */
+.buscador { padding: 31px 0 37px; border-bottom: 1px solid var(--gris-borde); }
+.buscador-superior { display: flex; align-items: center; gap: 34px; margin-bottom: 25px; }
+.buscador h2 { font-size: 19px; letter-spacing: -.03em; }
+.opciones-viaje { display: flex; gap: 24px; color: #3e4144; font-size: 13px; }
+.opciones-viaje span:not(:last-child)::after { content: "·"; margin-left: 24px; color: #96999c; }
+.nota-prototipo { margin-left: auto; font-size: 12px; color: var(--gris-texto); }
+.buscador-campos { display: grid; grid-template-columns: 1fr 40px 1fr 1fr auto; align-items: center; }
+.campo { padding: 2px 22px; min-height: 60px; border-right: 1px solid var(--gris-borde); }
+.campo:first-child { padding-left: 0; border: 0; }
+.campo-etiqueta, .campo-valor { display: block; }
+.campo-etiqueta { margin-bottom: 6px; font-size: 12px; color: var(--gris-texto); }
+.campo-valor { font-size: 18px; font-weight: 600; letter-spacing: -.02em; }
+.intercambio { width: 32px; height: 32px; text-align: center; line-height: 28px; border: 1px solid var(--gris-borde); border-radius: 50%; font-size: 22px; }
+.buscador .boton { margin-left: 28px; min-height: 54px; padding-inline: 32px; }
+
+/* 6. Experiencia: título a la izquierda y cuatro beneficios a la derecha. */
+.experiencia { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; }
+.introduccion h2, .viaje h2 { margin-top: 29px; font-size: 48px; line-height: 1.08; letter-spacing: -.045em; }
+.introduccion > p:last-child { max-width: 355px; margin-top: 30px; font-size: 18px; color: var(--gris-texto); }
+.beneficios { display: grid; grid-template-columns: 1fr 1fr; gap: 42px 38px; padding-top: 2px; }
+.beneficios article { border-top: 1px solid var(--gris-borde); padding-top: 15px; }
+.indice { color: var(--gris-texto); font-size: 12px; }
+.beneficios h3 { font-size: 22px; letter-spacing: -.04em; margin-top: 17px; }
+.beneficios p { margin-top: 10px; color: var(--gris-texto); font-size: 18px; line-height: 1.65; }
+
+/* 7. Cabinas: fotografía amplia y bloque rojo sin sombras ni esquinas redondas. */
+.cabinas { padding-block: 90px 43px; background: var(--negro); color: var(--blanco); }
+.cabinas-encabezado { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 45px; }
+.cabinas h2 { font-size: 60px; line-height: 1.02; letter-spacing: -.045em; margin-top: 24px; }
+.cabinas-encabezado > p { font-size: 18px; color: #bebebe; padding-bottom: 5px; }
+.cabinas-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+.cabina-ejecutiva { min-height: 540px; position: relative; isolation: isolate; overflow: hidden; }
+.cabina-ejecutiva > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.cabina-ejecutiva::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,.06) 10%, rgba(0,0,0,.12) 35%, rgba(0,0,0,.9) 100%); }
+.cabina-texto { min-height: 540px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 40px; }
+.cabina-texto > .etiqueta { margin-bottom: 12px; }
+.cabina-texto h3 { font-size: 43px; line-height: 1.1; letter-spacing: -.04em; }
+.cabina-texto p { margin-top: 14px; color: #ededed; font-size: 18px; }
+.cabina-pie { display: block; width: 100%; border-top: 1px solid #ffffff60; padding-top: 17px; margin-top: 25px; font-size: 12px; letter-spacing: .14em; font-weight: 700; }
+.cabina-primera { background: var(--rojo); padding: 37px 40px; display: flex; flex-direction: column; }
+.primera-superior { display: flex; align-items: center; justify-content: space-between; }
+.sello { border: 1px solid #ffffff80; border-radius: 1000px; padding: 3px 10px; font-size: 12px; letter-spacing: .1em; }
+.cabina-primera h3 { font-size: 61px; line-height: .99; letter-spacing: -.05em; margin-top: 35px; }
+.primera-inferior { margin-top: auto; padding-top: 30px; }
+.primera-inferior h4 { font-size: 22px; letter-spacing: -.03em; }
+.primera-inferior p { font-size: 18px; line-height: 1.5; margin-top: 7px; }
+.nota-cabinas { margin-top: 23px; color: #a9a9a9; font-size: 12px; }
+
+/* 8. Secuencia del viaje y pie de página. */
+.viaje { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; }
+.momentos article { display: flex; gap: 28px; padding-block: 24px; border-top: 1px solid var(--gris-borde); }
+.momentos article:last-child { border-bottom: 1px solid var(--gris-borde); }
+.momentos article > span { color: var(--rojo); font-size: 14px; padding-top: 3px; }
+.momentos h3 { font-size: 23px; letter-spacing: -.03em; }
+.momentos p { margin-top: 6px; max-width: 420px; font-size: 18px; color: var(--gris-texto); }
+.pie { background: var(--negro); color: var(--blanco); padding-top: 62px; }
+.pie-superior { display: flex; justify-content: space-between; align-items: center; gap: 40px; padding-bottom: 55px; }
+.marca-pie { color: white; font-size: 70px; }
+.marca-pie .marca-detalle { color: #c4c4c4; font-size: 12px; margin-top: 14px; }
+.pie-superior > p { font-size: 25px; line-height: 1.25; letter-spacing: -.03em; }
+.pie-inferior { border-top: 1px solid #414141; padding-block: 24px; display: flex; justify-content: space-between; color: #b1b1b1; font-size: 12px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .boton { transition: none; }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow"><title>Tu viaje · Avianca Premium Concept</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-compra">
+  <header class="encabezado"><div class="contenedor navegacion"><a class="marca" href="index.html">avianca<span class="marca-detalle">PREMIUM CONCEPT</span></a><a class="volver" id="volver-vuelos" href="index.html#buscar-vuelos">← Volver a vuelos</a></div></header>
+  <main class="contenedor compra-main">
+    <p class="etiqueta"><span class="numero">01</span> TU EXPERIENCIA</p><h1 class="titulo-compra">Prepara tu <span>viaje.</span></h1>
+    <section class="resumen-vuelo" aria-label="Resumen del vuelo"><div><span class="campo-etiqueta">RUTA</span><strong id="ruta-vuelo">—</strong></div><div><span class="campo-etiqueta">FECHA Y SALIDA</span><strong id="fecha-vuelo">—</strong></div><div><span class="campo-etiqueta">VUELO · CABINA</span><strong id="detalle-vuelo">—</strong></div><div><span class="campo-etiqueta">PASAJEROS</span><strong id="cantidad-vuelo">—</strong></div></section>
+    <p class="pasos-reserva">1. Vuelo elegido <span>2. Datos de pasajeros</span> <span>3. Asientos y resumen</span></p>
+    <form id="formulario-compra">
+      <div id="pasajeros-form"></div>
+      <div class="acciones-compra"><button class="boton boton-contorno boton-asientos" type="button" id="abrir-asientos">Continuar al mapa de asientos</button><p id="estado-asientos" aria-live="polite">Aún no has seleccionado asientos.</p><button class="boton boton-rojo" type="submit">Revisar compra de prueba</button></div>
+      <p class="nota-prototipo">Prototipo académico. No ingreses datos reales: la información no se envía ni se guarda.</p>
+    </form>
+    <section class="confirmacion" id="confirmacion" hidden tabindex="-1" aria-live="polite"></section>
+  </main>
+  <dialog class="dialog-asientos" id="dialog-asientos" aria-labelledby="titulo-asientos"><div class="dialog-cabecera"><div><p class="etiqueta">PLANO ILUSTRATIVO</p><h2 id="titulo-asientos">Elige tus asientos</h2></div><button class="cerrar-dialogo" type="button" aria-label="Cerrar mapa de asientos">×</button></div><p class="nota-prototipo">Distribución conceptual, no corresponde a una configuración real de aeronave. Selecciona tantos asientos como pasajeros.</p><div class="leyenda-asientos"><span><i></i>Disponible</span><span><i class="elegido"></i>Elegido</span><span><i class="ocupado"></i>No disponible</span></div><label class="asignar-pasajero" for="pasajero-activo">Asignar asiento a <select id="pasajero-activo"></select></label><p id="asignaciones" aria-live="polite"></p><div class="mapa-avion" id="mapa-avion"></div><div class="dialog-acciones"><p id="contador-asientos">0 seleccionados</p><button class="boton boton-rojo" type="button" id="confirmar-asientos">Confirmar selección</button></div></dialog>
+  <script src="purchase.js" defer></script>
+</body></html>

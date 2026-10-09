@@ -67,7 +67,7 @@ h1 span { color: var(--rojo); }
 .portada-pie { position: absolute; bottom: 36px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #a3adb5; padding-top: 20px; font-size: 13px; }
 .portada-pie span:first-child { letter-spacing: .13em; font-size: 12px; font-weight: 700; }
 
-/* 5. Buscador estático. Los datos son texto de ejemplo, no un formulario real. */
+/* 5. Buscador de vuelos de muestra. */
 .buscador { padding: 31px 0 37px; border-bottom: 1px solid var(--gris-borde); }
 .buscador-superior { display: flex; align-items: center; gap: 34px; margin-bottom: 25px; }
 .buscador h2 { font-size: 19px; letter-spacing: -.03em; }
@@ -133,3 +133,96 @@ h1 span { color: var(--rojo); }
   html { scroll-behavior: auto; }
   .boton { transition: none; }
 }
+
+/* 10. Prototipo de búsqueda y reserva (escritorio). */
+.buscador { padding-top: 31px; }
+.buscador-campos { display: grid; grid-template-columns: minmax(130px,1fr) 34px minmax(130px,1fr) minmax(145px,1.05fr) minmax(125px,.9fr) minmax(165px,1.1fr) minmax(100px,.65fr); align-items: end; gap: 12px; }
+.buscador-campos .campo { min-width: 0; min-height: 62px; padding: 0 10px 7px; border-right: 0; border-bottom: 1px solid var(--gris-borde); }
+.buscador-campos .campo:first-child { padding-left: 10px; }
+.campo select, .campo input { width: 100%; padding: 2px 20px 2px 0; border: 0; background: transparent; color: var(--negro); font-family: var(--fuente); font-size: 15px; font-weight: 600; }
+.campo select:focus, .campo input:focus { outline: 2px solid var(--rojo); outline-offset: 3px; }
+.buscador-campos .intercambio { align-self: center; margin-top: 18px; font-size: 17px; }
+.buscador-campos .boton { grid-column: 7; width: 100%; min-height: 48px; margin: 4px 0 0; padding-inline: 12px; font-size: 12px; }
+.buscador-nota { margin-top: 15px; }
+.resultados { padding-block: 58px 72px; scroll-margin-top: 22px; }
+.resultados[hidden], .confirmacion[hidden] { display: none; }
+.resultados-titulo { display: flex; align-items: end; gap: 30px; margin-bottom: 25px; }
+.resultados-titulo .etiqueta { color: var(--rojo); }
+.resultados-titulo h2 { font-size: 34px; line-height: 1.1; }
+.resultados-titulo p:last-child { color: var(--gris-texto); font-size: 14px; }
+.lista-vuelos { border-top: 1px solid var(--gris-borde); }
+.vuelo-card { display: grid; grid-template-columns: .8fr .9fr 1.2fr 1fr auto; align-items: center; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--gris-borde); }
+.vuelo-card strong { display: block; font-size: 17px; }
+.vuelo-card .boton { min-width: 145px; }
+.mensaje-busqueda { padding: 28px; background: var(--cielo); }
+.pagina-compra { min-width: 1100px; background: #f8f8f7; }
+.compra-main { padding-block: 55px 100px; }
+.titulo-compra { margin: 12px 0 31px; font-size: 62px; line-height: 1; letter-spacing: -.055em; }
+.titulo-compra span { color: var(--rojo); }
+.resumen-vuelo { display: grid; grid-template-columns: 1.1fr 1fr 1.25fr .7fr; gap: 24px; padding: 22px 25px; margin-bottom: 42px; background: var(--negro); color: white; }
+.resumen-vuelo strong { display: block; font-size: 17px; }
+.resumen-vuelo .campo-etiqueta { color: #c3c3c3; }
+.pasajero-bloque { padding: 27px 30px 31px; margin-bottom: 20px; background: white; border: 1px solid var(--gris-borde); }
+.pasajero-titulo { display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px; }
+.pasajero-titulo h2 { font-size: 23px; }
+.pasajero-titulo span { color: var(--gris-texto); font-size: 13px; }
+.campos-pasajero { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px 20px; }
+.campo-form label, .campo-form > span { display: block; margin-bottom: 6px; color: var(--gris-texto); font-size: 13px; }
+.campo-form input, .campo-form select, .campo-form textarea { width: 100%; min-height: 45px; padding: 9px 11px; border: 1px solid var(--gris-borde); border-radius: 0; background: white; color: var(--negro); font: 15px var(--fuente); }
+.campo-form textarea { min-height: 45px; resize: vertical; }
+.campo-form input:focus, .campo-form select:focus, .campo-form textarea:focus { outline: 2px solid var(--rojo); outline-offset: 1px; }
+.campo-form.alergias { grid-column: span 2; }
+.acciones-compra { display: flex; align-items: center; gap: 20px; padding-block: 25px; }
+.acciones-compra p { flex: 1; color: var(--gris-texto); font-size: 14px; }
+.acciones-compra .boton { cursor: pointer; }
+.boton-asientos { background: white; border-color: var(--negro); color: var(--negro); }
+.boton-asientos:hover { background: var(--negro); color: white; }
+.compra-main > form > .nota-prototipo { padding-top: 14px; border-top: 1px solid var(--gris-borde); }
+.confirmacion { padding: 24px 28px; margin-top: 25px; background: #e8f2eb; border-left: 4px solid #34804f; }
+.confirmacion h2 { font-size: 24px; }
+.confirmacion p { margin-top: 7px; }
+.volver { font-size: 14px; font-weight: 700; }
+.volver:hover { color: var(--rojo); }
+.dialog-asientos { width: min(900px, calc(100vw - 60px)); max-height: 90vh; padding: 30px 34px; border: 0; color: var(--negro); box-shadow: 0 24px 90px #0004; }
+.dialog-asientos::backdrop { background: #101010a8; }
+.dialog-cabecera { display: flex; align-items: start; justify-content: space-between; }
+.dialog-cabecera h2 { font-size: 32px; line-height: 1.15; }
+.cerrar-dialogo { width: 40px; height: 40px; border: 1px solid var(--gris-borde); background: white; font-size: 27px; cursor: pointer; }
+.leyenda-asientos { display: flex; gap: 22px; padding-block: 20px; color: var(--gris-texto); font-size: 13px; }
+.leyenda-asientos span { display: flex; align-items: center; gap: 7px; }
+.leyenda-asientos i { width: 15px; height: 15px; border: 1px solid #87918b; display: inline-block; }
+.leyenda-asientos i.elegido { background: var(--rojo); border-color: var(--rojo); }
+.leyenda-asientos i.ocupado { background: #d7d9d8; border-color: #d7d9d8; }
+.mapa-avion { max-height: 48vh; overflow-y: auto; padding: 25px 18px; border: 1px solid var(--gris-borde); background: #f7f8f7; }
+.fila-asientos { display: grid; grid-template-columns: 35px repeat(3, 42px) minmax(70px,1fr) repeat(3, 42px); justify-content: center; align-items: center; gap: 8px; width: min(500px,100%); margin: 8px auto; }
+.fila-asientos.primera { grid-template-columns: 35px repeat(2, 42px) minmax(70px,1fr) repeat(2, 42px); }
+.numero-fila { color: var(--gris-texto); font-size: 12px; text-align: center; }
+.asiento { min-height: 36px; border: 1px solid #87918b; background: white; color: var(--negro); font: 12px var(--fuente); cursor: pointer; }
+.asiento:hover:not(:disabled) { border-color: var(--rojo); }
+.asiento.seleccionado { border-color: var(--rojo); background: var(--rojo); color: white; }
+.asiento:disabled { border-color: #d7d9d8; background: #d7d9d8; color: #797d79; cursor: not-allowed; }
+.cabina-separador { width: min(500px,100%); margin: 22px auto 12px; border-top: 1px dashed #9ba09c; padding-top: 12px; color: var(--gris-texto); font-size: 11px; letter-spacing: .1em; text-align: center; }
+.dialog-acciones { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; }
+.dialog-acciones p { font-size: 14px; color: var(--gris-texto); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Acceso a reservas y plano funcional de la cabina. */
+.pasos-reserva { margin: 0 0 24px; font-size: 14px; font-weight: 700; color: var(--rojo); }
+.pasos-reserva span { margin-left: 28px; color: var(--gris-texto); }
+.buscador-campos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.buscador-campos .intercambio { display: none; }
+.buscador-campos .boton { grid-column: span 2; font-size: 14px; }
+.boton:not(:disabled) { cursor: pointer; }
+.boton-rojo:hover { background: var(--rojo-profundo); }
+.asignar-pasajero { display: flex; align-items: center; gap: 12px; font-size: 15px; }
+.asignar-pasajero select { font: inherit; padding: 8px 12px; max-width: 450px; }
+#asignaciones { margin: 12px 0; font-size: 14px; color: var(--gris-texto); }
+.plano-cabina { max-width: 540px; margin: auto; background: white; border: 2px solid #b8c4cd; border-radius: 130px 130px 55px 55px; padding: 28px 20px 20px; }
+.nariz-cabina { text-align: center; font-size: 12px; color: var(--gris-texto); padding: 15px 0 28px; }
+.nariz-cabina strong { font-size: 15px; color: var(--negro); }
+.servicios-cabina { display: flex; justify-content: space-between; border-block: 1px solid var(--gris-borde); padding: 10px 0; font-size: 13px; }
+.servicios-traseros { margin-top: 22px; }
+.cola-cabina { text-align: center; margin-top: 18px; font-size: 12px; color: var(--gris-texto); }
+.plano-cabina .fila-asientos { width: 100%; }
+.plano-cabina .asiento { min-height: 43px; border-radius: 7px 7px 3px 3px; border-bottom-width: 5px; font-size: 14px; }
+.pasillo { font-size: 12px; text-align: center; color: var(--gris-texto); }

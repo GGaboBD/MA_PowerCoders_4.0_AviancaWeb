@@ -22,7 +22,7 @@
         <a href="#cabinas">Nuestras cabinas</a>
         <a href="#viaje">Tu viaje</a>
       </nav>
-      <a class="boton boton-oscuro" href="#cabinas">Descubre tu espacio</a>
+      <a class="boton boton-oscuro" href="#buscar-vuelos">Buscar y reservar vuelo</a>
     </div>
   </header>
 
@@ -44,21 +44,26 @@
       </div>
     </section>
 
-    <!-- Maqueta del buscador: controles deshabilitados, sin JavaScript ni envíos. -->
-    <section class="buscador contenedor" aria-labelledby="titulo-buscador" aria-describedby="nota-buscador">
+    <section id="buscar-vuelos" class="buscador contenedor" aria-labelledby="titulo-buscador">
       <div class="buscador-superior">
         <h2 id="titulo-buscador">Tu próximo viaje</h2>
-        <div class="opciones-viaje" aria-label="Configuración de ejemplo"><span>Ida y vuelta</span><span>1 adulto</span><span>Clase ejecutiva</span></div>
-        <span class="nota-prototipo" id="nota-buscador">Vista de diseño · sin reservas</span>
+        <div class="opciones-viaje"><span>Solo ida</span><span>Ejecutiva & primera clase</span></div>
+        <span class="nota-prototipo">Prototipo · vuelos de muestra</span>
       </div>
-      <div class="buscador-campos">
-        <div class="campo"><span class="campo-etiqueta">Origen</span><span class="campo-valor">¿Desde dónde vuelas?</span></div>
-        <span class="intercambio" aria-hidden="true">⇄</span>
-        <div class="campo"><span class="campo-etiqueta">Destino</span><span class="campo-valor">¿A dónde quieres ir?</span></div>
-        <div class="campo campo-fechas"><span class="campo-etiqueta">Salida / Regreso</span><span class="campo-valor">Elige tus fechas</span></div>
-        <button class="boton boton-rojo" type="button" disabled>Explorar vuelos</button>
-      </div>
+      <p class="pasos-reserva">1. Busca tu vuelo <span>2. Completa tus datos</span> <span>3. Elige tus asientos</span></p>
+      <form class="buscador-campos" id="formulario-busqueda">
+        <label class="campo"><span class="campo-etiqueta">Origen</span><select name="origen" required><option value="BOG">Bogotá (BOG)</option><option value="MDE">Medellín (MDE)</option><option value="CLO">Cali (CLO)</option><option value="CTG">Cartagena (CTG)</option></select></label>
+        <span class="intercambio" aria-hidden="true">→</span>
+        <label class="campo"><span class="campo-etiqueta">Destino</span><select name="destino" required><option value="MDE">Medellín (MDE)</option><option value="BOG">Bogotá (BOG)</option><option value="CLO">Cali (CLO)</option><option value="CTG">Cartagena (CTG)</option></select></label>
+        <label class="campo"><span class="campo-etiqueta">Fecha</span><input name="fecha" type="date" required></label>
+        <label class="campo"><span class="campo-etiqueta">Hora desde</span><input name="hora" type="time" value="00:00" required></label>
+        <label class="campo"><span class="campo-etiqueta">Cabina</span><select name="cabina"><option value="ejecutiva">Clase ejecutiva</option><option value="primera">Primera clase</option></select></label>
+        <label class="campo"><span class="campo-etiqueta">Pasajeros</span><select name="pasajeros"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+        <button class="boton boton-rojo" type="submit">Explorar vuelos</button>
+      </form>
+      <p class="nota-prototipo buscador-nota">La búsqueda usa itinerarios y precios ficticios para este prototipo. No se realizan reservas.</p>
     </section>
+    <section class="resultados contenedor" id="resultados" aria-live="polite" hidden></section>
 
     <!-- Beneficios: composición asimétrica y divisores finos, inspirados en DESIGN.md. -->
     <section class="experiencia contenedor seccion" id="experiencia" aria-labelledby="titulo-experiencia">
@@ -102,6 +107,7 @@
         <article><span>03</span><div><h3>Al llegar</h3><p>Lleva contigo la sensación de haber disfrutado tanto el camino como el destino.</p></div></article>
       </div>
     </section>
+  <noscript>Activa JavaScript para buscar vuelos y seleccionar asientos.</noscript>
   </main>
 
   <footer class="pie">
@@ -110,5 +116,6 @@
       <div class="pie-inferior"><span>Proyecto universitario · 2026</span><span>Prototipo independiente, no es el sitio oficial de Avianca.</span><span>Diseñado para imaginar.</span></div>
     </div>
   </footer>
+  <script src="search.js" defer></script>
 </body>
 </html>

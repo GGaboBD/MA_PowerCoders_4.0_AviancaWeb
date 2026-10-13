@@ -226,3 +226,9 @@ h1 span { color: var(--rojo); }
 .plano-cabina .fila-asientos { width: 100%; }
 .plano-cabina .asiento { min-height: 43px; border-radius: 7px 7px 3px 3px; border-bottom-width: 5px; font-size: 14px; }
 .pasillo { font-size: 12px; text-align: center; color: var(--gris-texto); }
+
+/* Acceso a cuenta, a la derecha del encabezado. */
+.acciones-nav { display: flex; align-items: center; gap: 20px; }
+.enlace-reservar { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.enlace-reservar:hover { color: var(--rojo); }
+@media (max-width: 1200px) { .navegacion { gap: 18px; } .navegacion nav { gap: 20px; } .acciones-nav { gap: 14px; } }

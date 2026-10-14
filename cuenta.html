@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Inicia sesión o crea tu cuenta en el prototipo Avianca Premium.">
+  <title>Tu cuenta · Avianca Premium Concept</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23da291c'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-family='Arial' font-size='28' font-weight='700' fill='white'%3Ea%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cuenta.css">
+  <script src="cuenta.js" defer></script>
+</head>
+<body class="pagina-cuenta">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado"><div class="contenedor navegacion">
+    <a class="marca" href="index.html" aria-label="Avianca, inicio">avianca<span class="marca-detalle">PREMIUM CONCEPT</span></a>
+    <a class="volver" href="index.html">Volver al inicio</a>
+  </div></header>
+  <main id="contenido" class="contenedor cuenta-layout">
+    <section class="cuenta-imagen" aria-labelledby="titulo-cuenta">
+      <img src="assets/cabina.webp" alt="Interior conceptual de una cabina ejecutiva" width="1536" height="1024">
+      <div class="cuenta-editorial"><p class="etiqueta">TU ESPACIO, DESDE EL PRIMER MOMENTO</p><h1 id="titulo-cuenta">Tu próxima<br>experiencia<br>empieza <span>aquí.</span></h1><p>Más cerca de tu próxima forma de volar.</p></div>
+      <span class="cuenta-imagen-pie">EJECUTIVA & PRIMERA CLASE</span>
+    </section>
+    <section class="cuenta-panel" aria-label="Acceso a tu cuenta">
+      <div class="cuenta-tabs" role="tablist" aria-label="Elige cómo acceder">
+        <button id="tab-login" role="tab" aria-selected="true" aria-controls="panel-login" type="button">Iniciar sesión</button>
+        <button id="tab-registro" role="tab" aria-selected="false" aria-controls="panel-registro" tabindex="-1" type="button">Crear cuenta</button>
+      </div>
+      <div id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+        <h2>Qué bueno verte.</h2><p class="cuenta-intro">Ingresa los datos de tu cuenta para continuar.</p>
+        <form id="form-login">
+          <div class="cuenta-campo"><label for="login-email">Correo electrónico</label><input id="login-email" name="email" type="email" autocomplete="username" placeholder="tu@correo.com" required></div>
+          <div class="cuenta-campo"><label for="login-password">Contraseña</label><div class="cuenta-clave"><input id="login-password" name="password" type="password" autocomplete="current-password" required><button type="button" data-password="login-password" aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button></div></div>
+          <button class="boton boton-rojo cuenta-enviar" type="submit">Iniciar sesión</button>
+          <p class="cuenta-mensaje" role="status" id="mensaje-login" hidden></p>
+        </form>
+        <p class="cuenta-cambiar">¿Es tu primera vez? <button type="button" data-switch="registro">Crea tu cuenta</button></p>
+      </div>
+      <div id="panel-registro" role="tabpanel" aria-labelledby="tab-registro" hidden>
+        <h2>Un viaje más tuyo.</h2><p class="cuenta-intro">Empecemos con tus datos básicos.</p>
+        <form id="form-registro">
+          <div class="cuenta-nombres">
+            <div class="cuenta-campo"><label for="registro-nombre">Nombre</label><input id="registro-nombre" name="nombre" autocomplete="given-name" maxlength="80" required></div>
+            <div class="cuenta-campo"><label for="registro-apellido">Apellido</label><input id="registro-apellido" name="apellido" autocomplete="family-name" maxlength="80" required></div>
+          </div>
+          <div class="cuenta-campo"><label for="registro-email">Correo electrónico</label><input id="registro-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required></div>
+          <div class="cuenta-campo"><label for="registro-password">Contraseña</label><div class="cuenta-clave"><input id="registro-password" name="password" type="password" autocomplete="new-password" minlength="8" aria-describedby="ayuda-clave" required><button type="button" data-password="registro-password" aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button></div><p class="cuenta-ayuda" id="ayuda-clave">Usa al menos 8 caracteres.</p></div>
+          <div class="cuenta-campo"><label for="registro-confirmacion">Confirmar contraseña</label><div class="cuenta-clave"><input id="registro-confirmacion" name="confirmacion" type="password" autocomplete="new-password" minlength="8" required><button type="button" data-password="registro-confirmacion" aria-label="Mostrar confirmación de contraseña" aria-pressed="false">Mostrar</button></div></div>
+          <button class="boton boton-rojo cuenta-enviar" type="submit">Crear cuenta</button>
+          <p class="cuenta-mensaje" role="status" id="mensaje-registro" hidden></p>
+        </form>
+        <p class="cuenta-cambiar">¿Ya tienes una cuenta? <button type="button" data-switch="login">Inicia sesión</button></p>
+      </div>
+      <p class="cuenta-demo">Vista de prueba: aún no se crean cuentas ni se inicia sesión. Los datos no se envían ni se guardan.</p>
+      <noscript>Activa JavaScript para cambiar entre los formularios y probar las validaciones.</noscript>
+    </section>
+  </main>
+  <footer class="cuenta-footer contenedor"><span>Proyecto universitario · 2026</span><span>Prototipo independiente, no es el sitio oficial de Avianca.</span></footer>
+</body>
+</html>

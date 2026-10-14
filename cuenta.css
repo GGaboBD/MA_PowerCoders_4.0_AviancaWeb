@@ -1,0 +1,33 @@
+/* Acceso y registro: escritorio, con la identidad del resto del sitio. */
+.pagina-cuenta { background: #f7f8f8; }
+.cuenta-layout { display: grid; grid-template-columns: 1fr 1fr; margin-top: 24px; margin-bottom: 32px; min-height: 740px; background: white; }
+.cuenta-imagen { position: relative; isolation: isolate; overflow: hidden; padding: 48px; background: #151a1c; color: white; display: flex; flex-direction: column; justify-content: flex-end; }
+.cuenta-imagen > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% center; z-index: -2; }
+.cuenta-imagen::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, #11111105 0%, #11111175 35%, #111111f5 100%); z-index: -1; }
+.cuenta-editorial h1 { margin-top: 23px; font-size: clamp(52px, 4.4vw, 68px); line-height: 1.02; letter-spacing: -.05em; }
+.cuenta-editorial h1 span { color: #fff; }
+.cuenta-editorial > p:last-child { margin-top: 24px; font-size: 17px; color: #e1e3e5; }
+.cuenta-imagen-pie { margin-top: 44px; padding-top: 19px; border-top: 1px solid #ffffff55; font-size: 12px; letter-spacing: .12em; }
+.cuenta-panel { padding: 38px 52px 30px; }
+.cuenta-tabs { display: flex; border-bottom: 1px solid var(--gris-borde); margin-bottom: 32px; }
+.cuenta-tabs button { flex: 1; border: 0; border-bottom: 3px solid transparent; padding: 14px 4px; font-size: 15px; font-weight: 700; background: white; color: var(--gris-texto); cursor: pointer; }
+.cuenta-tabs button[aria-selected="true"] { color: var(--rojo); border-bottom-color: var(--rojo); }
+.cuenta-panel h2 { font-size: 34px; letter-spacing: -.035em; line-height: 1.2; }
+.cuenta-intro { margin: 10px 0 24px; font-size: 16px; color: var(--gris-texto); }
+.cuenta-campo { margin-bottom: 17px; min-width: 0; }
+.cuenta-campo label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 7px; }
+.cuenta-campo input { width: 100%; height: 46px; border: 1px solid #bfc5ca; border-radius: 6px; padding: 10px 12px; font: 16px var(--fuente); background: white; }
+.cuenta-campo input:focus-visible { outline: 2px solid var(--rojo); outline-offset: 2px; }
+.cuenta-clave { position: relative; }
+.cuenta-clave input { padding-right: 83px; }
+.cuenta-clave button { position: absolute; right: 7px; top: 6px; height: 34px; padding: 4px 8px; background: white; color: var(--gris-texto); border: 0; font-size: 13px; cursor: pointer; }
+.cuenta-nombres { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cuenta-ayuda { margin-top: 4px; color: var(--gris-texto); font-size: 12px; }
+.cuenta-enviar { width: 100%; margin-top: 5px; min-height: 48px; }
+.cuenta-cambiar { margin-top: 21px; font-size: 14px; text-align: center; }
+.cuenta-cambiar button { background: none; border: 0; color: var(--rojo); font-size: inherit; font-weight: 700; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.cuenta-demo { border-top: 1px solid var(--gris-borde); margin-top: 26px; padding-top: 16px; color: var(--gris-texto); font-size: 12px; }
+.cuenta-mensaje { padding: 13px 15px; margin-top: 16px; background: var(--cielo); border-left: 3px solid var(--rojo); font-size: 14px; }
+.cuenta-panel [hidden] { display: none; }
+.cuenta-footer { display: flex; justify-content: space-between; font-size: 12px; color: var(--gris-texto); padding-bottom: 26px; }
+@media (max-width: 1200px) { .cuenta-panel { padding-inline: 34px; } .cuenta-imagen { padding-inline: 34px; } }

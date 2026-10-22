@@ -1,0 +1,38 @@
+/* Cuenta · Fotografía editorial y formularios con la misma escala visual. */
+.pagina-cuenta { background: var(--papel); }
+.cuenta-layout { display: grid; grid-template-columns: 1.02fr 1fr; min-height: 720px; margin-block: 32px; background: white; border: 1px solid var(--gris-borde); border-radius: 18px; overflow: hidden; }
+.cuenta-imagen { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 45px; background: #20221f; color: white; }
+.cuenta-imagen > img { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% center; }
+.cuenta-imagen::after { content: ''; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, #0c0e0b08 0%, #11130d60 35%, #11130df2 100%); }
+.cuenta-editorial, .cuenta-imagen-pie { position: relative; z-index: 2; }
+.cuenta-editorial .etiqueta { max-width: 260px; color: #e2e2dc; font-size: 9px; }
+.cuenta-editorial h1 { margin: 23px 0 0; font-size: clamp(51px, 4.3vw, 65px); line-height: 1.02; font-weight: 400; letter-spacing: -.05em; }
+.cuenta-editorial h1 span { color: white; font-weight: 700; }
+.cuenta-editorial > p:last-child { margin-top: 24px; color: #d0d0c7; font-size: 14px; }
+.cuenta-imagen-pie { display: flex; justify-content: space-between; margin-top: 38px; padding-top: 19px; border-top: 1px solid #ffffff45; font-size: 9px; font-weight: 700; letter-spacing: .14em; }
+.cuenta-imagen-pie::after { content: '↗'; font-size: 20px; line-height: 1; }
+.cuenta-panel { padding: 34px 52px 30px; align-self: center; }
+.cuenta-tabs { display: flex; padding: 4px; margin-bottom: 32px; background: var(--papel); border: 1px solid #eeeee9; border-radius: 100px; }
+.cuenta-tabs button { flex: 1; padding: 11px 8px; border: 0; border-radius: 100px; background: transparent; color: var(--gris-texto); font-size: 12px; font-weight: 700; }
+.cuenta-tabs button[aria-selected='true'] { color: white; background: var(--negro); box-shadow: 0 2px 4px #0001; }
+.cuenta-eyebrow { margin-bottom: 8px; color: var(--rojo); font-size: 9px; }
+.cuenta-panel h2 { font-size: 37px; line-height: 1.15; letter-spacing: -.05em; font-weight: 400; }
+.cuenta-intro { margin: 12px 0 26px; color: var(--gris-texto); font-size: 13px; }
+.cuenta-campo { min-width: 0; margin-bottom: 17px; }
+.cuenta-campo label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 700; }
+.cuenta-campo input { width: 100%; min-height: 49px; padding: 12px 14px; border: 1px solid #d4d4ce; border-radius: 8px; background: #fff; font-size: 14px; transition: border-color .18s, box-shadow .18s; }
+.cuenta-campo input:hover { border-color: #92928a; }
+.cuenta-campo input:focus { outline: 0; border-color: var(--rojo); box-shadow: 0 0 0 3px #da291c12; }
+.cuenta-clave { position: relative; }
+.cuenta-clave input { padding-right: 80px; }
+.cuenta-clave button { position: absolute; right: 8px; top: 9px; padding: 7px 9px; border: 0; border-radius: 5px; background: transparent; color: var(--gris-texto); font-size: 11px; }
+.cuenta-clave button:hover { color: var(--rojo); background: var(--rojo-suave); }
+.cuenta-nombres { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cuenta-ayuda { margin-top: 6px; color: var(--gris-texto); font-size: 10px; }
+.cuenta-enviar { width: 100%; min-height: 48px; margin-top: 5px; }
+.cuenta-cambiar { margin-top: 22px; text-align: center; color: var(--gris-texto); font-size: 12px; }
+.cuenta-cambiar button { padding: 0; border: 0; background: transparent; color: var(--rojo); font-size: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.cuenta-demo { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--gris-borde); color: var(--gris-texto); font-size: 10px; line-height: 1.8; }
+.cuenta-mensaje { margin-top: 18px; padding: 14px 16px; border: 1px solid #f0d3cc; border-radius: 8px; background: #fff5f1; color: #81362c; font-size: 12px; line-height: 1.7; }
+.cuenta-footer { display: flex; justify-content: space-between; padding-bottom: 28px; color: var(--gris-texto); font-size: 10px; }
+@media (max-width: 1200px) { .cuenta-panel { padding-inline: 36px; } .cuenta-imagen { padding-inline: 36px; } }

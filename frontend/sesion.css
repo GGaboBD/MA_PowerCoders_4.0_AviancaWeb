@@ -1,0 +1,8 @@
+/* Sesión compartida: los controles aparecen únicamente al autenticar. */
+.sesion-salir { padding: 9px 16px; min-height: 40px; font-size: 11px; }
+.sesion-aviso { padding: 10px max(36px, calc((100% - 1320px) / 2)); border-top: 1px solid #f1ded8; background: #fff3ed; color: #794338; font-size: 12px; }
+#perfil-sesion { padding-block: 24px; }
+#perfil-sesion > .etiqueta { color: var(--rojo); }
+#perfil-sesion h2 { margin: 14px 0 12px; font-size: 38px; }
+#perfil-sesion p { margin-bottom: 24px; font-size: 14px; color: var(--gris-texto); overflow-wrap: anywhere; }
+#perfil-sesion .boton { margin: 0 6px 12px 0; }

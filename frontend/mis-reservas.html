@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><title>Mis reservas · Avianca Premium Concept</title>
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="sesion.css"><link rel="stylesheet" href="mis-reservas.css">
+  <script src="sesion.js" defer></script><script src="mis-reservas.js" defer></script>
+</head>
+<body class="pagina-reservas">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado"><div class="contenedor navegacion"><a class="marca" href="index.html">avianca<span class="marca-detalle">PREMIUM CONCEPT</span></a><div class="acciones-nav"><a class="volver" href="index.html#buscar-vuelos">Buscar vuelos</a><a class="boton boton-oscuro" href="cuenta.html">Mi cuenta</a></div></div></header>
+  <main class="contenedor viajes-main" id="contenido">
+    <div class="viajes-heading"><div><p class="etiqueta"><span class="punto-rojo" aria-hidden="true"></span> TU EXPERIENCIA PREMIUM</p><h1>Mis <span>reservas.</span></h1><p>Los detalles de tus próximos viajes, en un solo lugar.</p></div><button class="boton boton-contorno" id="actualizar-reservas" type="button"><span aria-hidden="true">↻</span> Actualizar</button></div>
+    <p class="viajes-aviso" id="reservas-estado" role="status">Consultando tus reservas…</p>
+    <a class="boton boton-rojo" id="acceder-reservas" href="cuenta.html" hidden>Iniciar sesión</a>
+    <section id="lista-reservas" aria-label="Tus reservas"></section>
+    <button id="mas-reservas" class="boton boton-contorno" type="button" hidden>Ver más reservas</button>
+    <p class="viajes-nota">Reservas académicas de prueba. No representan compras ni pagos reales.</p>
+  </main>
+<dialog id="dialog-cancelar" aria-labelledby="cancelar-titulo">
+  <h2 id="cancelar-titulo">¿Cancelar esta reserva?</h2>
+  <p id="cancelar-detalle"></p><p>Se cancelarán todos sus boletos y se liberarán sus asientos. El historial se conservará. Esta prueba no implica cobros ni reembolsos.</p>
+  <p id="cancelar-estado" role="status"></p>
+  <div class="cancelar-acciones"><button id="conservar-reserva" class="boton boton-contorno" type="button" autofocus>Conservar reserva</button><button id="confirmar-cancelacion" class="boton boton-rojo" type="button">Sí, cancelar toda la reserva</button></div>
+</dialog>
+</body>
+</html>

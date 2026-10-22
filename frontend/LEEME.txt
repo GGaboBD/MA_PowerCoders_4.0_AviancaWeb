@@ -1,0 +1,15 @@
+AVIANCA PREMIUM CONCEPT
+Actualización de diseño para escritorio.
+
+Las instrucciones de integración y el resumen de cambios se encuentran en
+LEEME-DISENO.txt, en la raíz del proyecto.
+
+Abre el sitio desde el servidor Node del proyecto. Los archivos JavaScript
+utilizan /api para buscar vuelos, gestionar cuentas y guardar reservas.
+Para probar estilos con datos reales del prototipo, usa datos ficticios.
+
+La adaptación a móviles queda pendiente. Ancho mínimo previsto: 1100 px.
+Las fotografías son conceptuales del prototipo universitario independiente.
+No es el sitio oficial de Avianca y no se procesan cobros reales.
+
+La licencia de las fuentes está en assets/FONT-LICENSE.txt.

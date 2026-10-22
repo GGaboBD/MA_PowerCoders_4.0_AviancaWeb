@@ -1,0 +1,48 @@
+/* Mis reservas · Pases de viaje con lectura clara del estado y los boletos. */
+.pagina-reservas { background: var(--papel); }
+.viajes-main { max-width: 1160px; padding-top: 60px; padding-bottom: 70px; }
+.viajes-heading { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: 34px; }
+.viajes-heading .etiqueta { color: var(--gris-texto); font-size: 9px; }
+.viajes-heading h1 { margin: 14px 0 15px; font-size: 60px; font-weight: 400; line-height: 1.05; letter-spacing: -.055em; }
+.viajes-heading h1 span { color: var(--rojo); }
+.viajes-heading p:last-child { color: var(--gris-texto); font-size: 14px; }
+.viajes-heading > .boton { background: white; font-size: 12px; }
+.viajes-heading > .boton span { font-size: 20px; font-weight: 400; line-height: 1; }
+.viajes-aviso { margin-bottom: 24px; padding: 15px 20px; border: 1px solid #deded5; border-radius: 9px; background: #eeeee7; color: #5e5e53; font-size: 12px; }
+.viaje-tarjeta { margin-bottom: 24px; border: 1px solid var(--gris-borde); border-radius: 16px; overflow: hidden; background: white; box-shadow: 0 5px 18px #1a1a1703; }
+.viaje-cabecera { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 25px 30px; border-bottom: 1px solid #e4e4db; background: white; }
+.viaje-localizador { font-size: 9px; letter-spacing: .12em; font-weight: 700; color: var(--gris-texto); }
+.viaje-cabecera h2 { margin: 10px 0 7px; font-size: 29px; line-height: 1.2; font-weight: 400; letter-spacing: -.04em; }
+.viaje-cabecera p { font-size: 11px; color: var(--gris-texto); }
+.viaje-estado { display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border: 1px solid #cfdfd3; border-radius: 100px; color: #2b6743; background: #f2f8f2; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.viaje-estado::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.viaje-cuerpo { position: relative; padding: 0 30px 26px; }
+.viaje-fechas { display: flex; gap: 65px; margin: 0 -30px 14px; padding: 20px 30px; border-bottom: 1px dashed #d8d8ce; background: #fafaf7; }
+.viaje-fechas p { font-size: 13px; }
+.viaje-fechas span { display: block; margin-bottom: 6px; color: var(--gris-texto); font-size: 10px; }
+.viaje-tabla-contenedor { overflow-x: auto; }
+.viaje-tabla { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; }
+.viaje-tabla th { color: var(--gris-texto); font-size: 9px; font-weight: 400; text-transform: uppercase; letter-spacing: .09em; }
+.viaje-tabla th, .viaje-tabla td { padding: 16px 16px; border-bottom: 1px solid #eeeee9; vertical-align: middle; }
+.viaje-tabla th:first-child, .viaje-tabla td:first-child { padding-left: 0; width: 35%; }
+.viaje-tabla th:last-child, .viaje-tabla td:last-child { padding-right: 0; text-align: right; white-space: nowrap; }
+.viaje-tabla td:first-child { font-weight: 700; }
+.viaje-tabla small { display: block; max-width: 370px; margin-top: 6px; color: var(--gris-texto); font-size: 9px; font-weight: 400; overflow-wrap: anywhere; }
+.viaje-tabla strong { display: inline-block; padding: 5px 10px; background: var(--rojo-suave); border-radius: 5px; color: var(--rojo); font-size: 15px; font-weight: 700; }
+.viaje-total { margin-top: 24px; text-align: right; font-size: 14px; font-weight: 700; }
+.cancelar-reserva { margin-top: 20px; min-height: 38px; padding: 8px 15px; color: #973b31; border-color: #e4c2bc; font-size: 10px; }
+.cancelar-reserva:hover { background: #fff3ee; border-color: #973b31; }
+.viaje-cancelado .viaje-cabecera { background: #f8f8f4; }
+.viaje-cancelado .viaje-estado { background: #eeeee7; border-color: #ddddd3; color: #707065; }
+.viaje-cancelado .viaje-tabla strong { background: #eeeee7; color: #707065; }
+.viajes-nota { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--gris-borde); color: var(--gris-texto); font-size: 10px; }
+#mas-reservas { display: flex; margin: 24px auto; }
+#acceder-reservas { margin-bottom: 24px; }
+#dialog-cancelar { max-width: 580px; width: calc(100% - 80px); margin: auto; padding: 36px; border: 1px solid #deded4; border-radius: 18px; box-shadow: 0 30px 100px #0003; color: var(--negro); }
+#dialog-cancelar::backdrop { background: #171713a6; backdrop-filter: blur(5px); }
+#dialog-cancelar h2 { margin: 0 0 20px; font-size: 29px; font-weight: 400; line-height: 1.2; letter-spacing: -.04em; }
+#dialog-cancelar p { margin-bottom: 16px; font-size: 13px; color: var(--gris-texto); }
+#cancelar-detalle { padding: 13px 15px; border-radius: 8px; background: var(--papel); font-weight: 700; }
+#dialog-cancelar #cancelar-estado { font-weight: 700; color: #973b31; }
+.cancelar-acciones { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.cancelar-acciones .boton { font-size: 11px; padding-inline: 18px; }
